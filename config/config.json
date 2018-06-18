@@ -1,0 +1,11 @@
+{
+  "gmail": {
+    "username": "ownvuemail@gmail.com",
+    "password":"****",
+    "toEmail": "support@ownvutechnologies.com"
+  },
+  "flipkart":{
+    "id":"shanumamm",
+    "token":"143079b9135a4a058140af8ebcbc7172"
+  }
+}
