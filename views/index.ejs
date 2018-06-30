@@ -9,22 +9,23 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Deals & offers</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="/js/bootstrap/css/bootstrap.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/css/shop-homepage.css" rel="stylesheet">
 
   </head>
 
   <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Deals of the day</a>
+        <a class="navbar-brand site-title" href="#">Deals of the day</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,13 +57,160 @@
 
         <div class="col-lg-3">
           <h1 class="my-4">Shop Name</h1>
-          <div class="list-group left-menu">
+          <!--<div class="list-group left-menu">
             <a href="#" class="list-group-item store-menu active" data-store="flipkart">Flipkart</a>
             <a href="#" class="list-group-item store-menu" data-store="ebay">Ebay</a>
             <a href="#" class="list-group-item store-menu" data-store="amazon">Amazon</a>
             <a href="#" class="list-group-item store-menu" data-store="snapdeal">Snapdeal</a>
             <a href="#" class="list-group-item store-menu" data-store="shopclues">Shopclues</a>
+          </div>-->
+
+          <div class="menu">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"><span class="glyphicon glyphicon-folder-close">
+                            </span>Flipkart</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in show">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr class="store-menu active" data-store="Flipkart" data-action="deals" data-flag="deals" data-title="Flipkart - Deals of the day">
+                                    <td>
+                                        <span class=""><i class="glyphicon glyphicon-fire"></i>Deals of the day</span>
+                                        <span class="badge flipkart-deals-count"></span>
+                                    </td>
+                                </tr>
+                                <tr class="store-menu" data-store="Flipkart" data-action="offers" data-flag="offers" data-title="Flipkart - All Offers">
+                                    <td>
+                                        <span class=""><i class="glyphicon glyphicon-flash"></i>Offers</span>
+                                        <span class="badge flipkart-offer-count"></span>
+                                    </td>
+                                </tr>
+                                <tr class="store-menu" data-store="Flipkart" data-action="search" data-flag="category" data-title="Flipkart - Category Search">
+                                    <td>
+                                      <span class=""><i class="glyphicon glyphicon-search"></i>Category Search</span>
+                                    </td>
+                                </tr>
+                                <!--<tr class="store-menu" data-store="Flipkart" data-action="search" data-flag="keyword" data-title="Flipkart - Keyword Search">
+                                    <td>
+                                      <span class=""><i class="glyphicon glyphicon-zoom-in"></i>Custom Search</span>
+                                    </td>
+                                </tr>-->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
+                            </span>Amazon</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <table class="table">
+                              <tr class="store-menu active" data-store="Amazon" data-action="deals" data-flag="deals" data-title="Amazon - Deals of the day">
+                                  <td>
+                                      <span class=""><i class="glyphicon glyphicon-fire"></i>Deals of the day</span>
+                                      <span class="badge Amazon-deals-count"></span>
+                                  </td>
+                              </tr>
+                              <tr class="store-menu" data-store="Amazon" data-action="offers" data-flag="offers" data-title="Amazon - All Offers">
+                                  <td>
+                                      <span class=""><i class="glyphicon glyphicon-flash"></i>Offers</span>
+                                      <span class="badge Amazon-offer-count"></span>
+                                  </td>
+                              </tr>
+                              <tr class="store-menu" data-store="Amazon" data-action="search" data-flag="category" data-title="Amazon - Category Search">
+                                  <td>
+                                    <span class=""><i class="glyphicon glyphicon-search"></i>Category Search</span>
+                                  </td>
+                              </tr>
+                              <!--<tr class="store-menu" data-store="Amazon" data-action="search" data-flag="keyword" data-title="Amazon - Keyword Search">
+                                  <td>
+                                    <span class=""><i class="glyphicon glyphicon-zoom-in"></i>Custom Search</span>
+                                  </td>
+                              </tr>-->
+                          </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user">
+                            </span>Ebay</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <a href="http://www.jquery2dotnet.com">Change Password</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://www.jquery2dotnet.com">Notifications</a> <span class="label label-info">5</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://www.jquery2dotnet.com">Import/Export</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-trash text-danger"></span><a href="http://www.jquery2dotnet.com" class="text-danger">
+                                            Delete Account</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
+                            </span>Snapdeal</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-usd"></span><a href="http://www.jquery2dotnet.com">Sales</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user"></span><a href="http://www.jquery2dotnet.com">Customers</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-tasks"></span><a href="http://www.jquery2dotnet.com">Products</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-shopping-cart"></span><a href="http://www.jquery2dotnet.com">Shopping Cart</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
+
         </div>
         <div class="col-lg-9">
           <!--<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -91,10 +239,34 @@
               <span class="sr-only">Next</span>
             </a>
           </div>-->
-
+          <div class="row title-container blueBox" style="margin:60px 0px 0px;">
+            <div class="col-md-6 col-pad-0 fk-title-container" >
+              <h2 class="fk-title title">
+                Flipkart - Deals of the day
+              </h2>
+            </div>
+            <div class="col-md-6 fk-search-container" style="display:none;">
+                <select id="fkCategory" name="" class="form-control">
+                    <option value="">Category</option>
+                    <% for(let i = 0; i < categoryList.length; i++) { %>
+                      <option value=<%=categoryList[i].url%> data-category=<%=categoryList[i].category%>><%=categoryList[i].categoryName%></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="col-md-6 pull-right search-set-container">
+              <div class="search-set" style="margin:auto;max-width:300px">
+                <input class="search-input" type="text" placeholder="Search.." name="search">
+                <button class="btn-defabtn btn-default search-btn" data-store="Flipkart" data-action="search"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row cart-loader" style="margin:0 auto;display:block;text-align:center;">
+            <img src="/images/cart.gif" />
+          </div>
           <div class="row produc-list-container" style="margin:50px 0px;">
 
           </div>
+
         </div>
       </div>
     </div>
@@ -110,38 +282,200 @@
     <!-- Bootstrap core JavaScript -->
     <script src="/js/jquery/jquery.min.js"></script>
     <script src="/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
     $( document ).ready(function() {
       var data = {};
-      data.store = 'flipkart';
+      data.store = 'Flipkart';
+      data.action = 'deals';
+      data.flag = 'deals'
+      sessionStorage.setItem("store", data.store);
+      sessionStorage.setItem("action", data.action);
+      sessionStorage.setItem("flag", data.flag);
+      sessionStorage.setItem("searchObject",'');
       getProducts(data);
 
       $('.store-menu').click(function(){
-          $('.store-menu').removeClass('active');
-          $(this).addClass('active');
-          data.store = $(this).attr('data-store');;
-          getProducts(data);
+        $('.search-input').val("");
+        $('.store-menu').removeClass('active');
+        $(this).addClass('active');
+        var action = $(this).attr('data-action');
+        var store = $(this).attr('data-store');
+        var title = $(this).attr('data-title');
+        var flag = $(this).attr('data-flag');
+        sessionStorage.setItem("store", store);
+        sessionStorage.setItem("action",action);
+        sessionStorage.setItem("flag",flag);
+        sessionStorage.setItem("searchObject",'');
+        data.title = title;
+        data.store = store;
+        data.action = action;
+        data.flag = flag;
+        getProducts(data);
+
       });
 
-      function getProducts(data){
+      $(".search-input").keyup(function(event) {
+        if (event.keyCode === 13) {
+          var input = $('.search-input').val();
+          if(input == ''){
+            if(data.flag=='category'){
+              var searchUrl = $('#fkCategory').val();
+              var searchCategory = $('#fkCategory :selected').attr('data-category');
+              if(searchUrl!=""){
+                var datam={}
+                datam.url = searchUrl;
+                datam.category = searchCategory;
+                categorySearch(datam);
+              }else{
+                swal("Select a gategory to search", "", "warning");
+              }
+
+            }else{
+              data.store = sessionStorage.store;
+              data.action = sessionStorage.action;
+              data.flag = sessionStorage.flag;
+              getProducts(data);
+            }
+
+          }else{
+              $('.search-btn').click();
+          }
+        }
+      });
+
+      $('.search-btn').click(function(){
+        var input = $('.search-input').val();
+        if(input == ''){
+          swal("Enter product name to serach", "", "warning");
+        }else{
+          var html='';
+          var searchObject = JSON.parse(sessionStorage.searchObject);
+          var regex = new RegExp(input, "i");
+          var searchResult = 0;
+          if(data.flag =='deals' || data.flag =='offers'){
+            searchResult = 0;
+    			  $.each(searchObject, function(key, val){
+              var nameSearch = ((val.name==null || val.name=='null' || val.name==undefined || val.name=='undefined')) ? false : (val.name.search(regex) != -1);
+              var titleSearch = ((val.title==null || val.title=='null' || val.title==undefined || val.title=='undefined')) ? false : (val.title.search(regex) != -1);
+              var descSearch = ((val.description==null || val.description=='null' || val.description==undefined || val.description=='undefined')) ? false : (val.description.search(regex) != -1);
+    				      if ((nameSearch) || (titleSearch) || (descSearch)) {
+                    html += '<div class="col-lg-4 col-md-6 mb-4 product-holder"><div class="card h-100 product-img"><a target="_blank" href='+val.url+'><img class="card-img-top" src='+val.imageUrls[3].url+' alt=""></a>';
+                    html += '<div class="card-body"><h4 class="card-title"><a target="_blank" href='+val.url+'>'+val.name+'</a></h4>';
+                    html +=  '<h5>'+val.title+'</h5><p class="card-text">'+(val.description=='null' ? '' : val.description )+'</p></div></div></div>';
+                    searchResult++;
+                }
+    			  });
+          }else if(data.flag=='category'){
+            searchResult = 0;
+    			  $.each(searchObject, function(key, val){
+              var brandSearch = ((val.productBrand==null || val.productBrand=='null' || val.productBrand==undefined || val.productBrand=='undefined')) ? false : (val.productBrand.search(regex) != -1);
+              var titleSearch = ((val.title==null || val.title=='null' || val.title==undefined || val.title=='undefined')) ? false : (val.title.search(regex) != -1);
+              var descSearch = ((val.productDescription==null || val.productDescription=='null' || val.productDescription==undefined || val.productDescription=='undefined')) ? false : (val.productDescription.search(regex) != -1);
+    				  if ((brandSearch) || (titleSearch) || (descSearch)) {
+
+                var images = JSON.stringify(val.imageUrls);
+                var images = JSON.parse(images);
+                html += '<div class="col-lg-4 col-md-6 mb-4 product-holder"><div class="card h-100 product-img"><a target="_blank" href='+val.productUrl+'><img class="card-img-top-search" src="'+images['400x400']+'" alt=""></a>';
+                html += '<div class="card-body"><h4 class="card-title"><a class="product-title" target="_blank" href='+val.productUrl+' title="'+val.title+'">'+val.title+'</a></h4>';
+                if(val.flipkartSellingPrice =='null' || val.flipkartSellingPrice==null ){
+                  html +=  '<div style="float:left;margin-right:10px">'+val.maximumRetailPrice.currency+' '+val.maximumRetailPrice.amount+'</div></div></div></div>';
+                }else{
+                  html +=  '<div style="float:left;margin-right:10px;color:green;font-weight:bold;">'+val.flipkartSellingPrice.currency+' '+val.flipkartSellingPrice.amount+'</div>';
+                  html +=  '<div style="text-decoration:line-through;color:red;">'+val.maximumRetailPrice.currency+' '+val.maximumRetailPrice.amount+'</div></div></div></div>';
+                }
+                searchResult++;
+              }
+    			  });
+
+          }else{
+            data.keyword = input;
+            searchAPI(data);
+            searchResult = 0;
+            return false;
+          }
+
+          if(searchResult >0){
+            $('.produc-list-container').html(html);
+          }else{
+            $('.produc-list-container').html("No matching products found");
+          }
+        }
+      });
+
+      function categorySearch(dataObject){
+            $.ajax({
+              url : "/fk/search/category",
+              type : "POST",
+              data : dataObject,
+              success : function(data) {
+
+                if (data.flag) {
+                    var response = data.response.products;
+                    var categoryObject = [];
+                    var html='';
+                    for(var i=0;i<response.length;i++){
+                      if(response[i].productBaseInfoV1.inStock){
+                        categoryObject.push(response[i].productBaseInfoV1);
+                        var images = JSON.stringify(response[i].productBaseInfoV1.imageUrls);
+                        var images = JSON.parse(images);
+                        html += '<div class="col-lg-4 col-md-6 mb-4 product-holder"><div class="card h-100 product-img"><a target="_blank" href='+response[i].productBaseInfoV1.productUrl+'><img class="card-img-top-search" src="'+images['400x400']+'" alt=""></a>';
+                        html += '<div class="card-body"><h4 class="card-title"><a class="product-title" target="_blank" href='+response[i].productBaseInfoV1.productUrl+' title="'+response[i].productBaseInfoV1.title+'">'+response[i].productBaseInfoV1.title+'</a></h4>';
+                        if(response[i].productBaseInfoV1.flipkartSellingPrice =='null' || response[i].productBaseInfoV1.flipkartSellingPrice==null ){
+                          html +=  '<div style="float:left;margin-right:10px">'+response[i].productBaseInfoV1.maximumRetailPrice.currency+' '+response[i].productBaseInfoV1.maximumRetailPrice.amount+'</div></div></div></div>';
+
+                        }else{
+                          html +=  '<div style="float:left;margin-right:10px;color:green;font-weight:bold;">'+response[i].productBaseInfoV1.flipkartSellingPrice.currency+' '+response[i].productBaseInfoV1.flipkartSellingPrice.amount+'</div>';
+                          html +=  '<div style="text-decoration:line-through;color:red;">'+response[i].productBaseInfoV1.maximumRetailPrice.currency+' '+response[i].productBaseInfoV1.maximumRetailPrice.amount+'</div></div></div></div>';
+
+                        }
+                      }
+                    }
+                    sessionStorage.setItem("searchObject", JSON.stringify(categoryObject));
+                    $('.produc-list-container').html(html);
+                } else {
+                  $('.produc-list-container').html("Please refresh and try again");
+                  alert("Something has went wrong / store not implemented");
+                }
+              },
+              error : function() {
+                alert("Something went wrong");
+              }
+            });
+      }
+      function searchAPI(datam){
         $.ajax({
           url : "/store/search",
           type : "POST",
-          data : data,
+          data : datam,
           success : function(data) {
-            console.log(data);
+            $('.cart-loader').css('display','none');
+            $('.produc-list-container').show();
             if (data.flag) {
-              var response = data.data.dotdList;
               var html='';
+              var response = '';
+              if(datam.action=='deals'){
+                response = data.data.dotdList;
+                response = response.reverse();
+                $('.flipkart-deals-count').html(response.length);
+
+              }else if(datam.action == 'offers'){
+                response = data.data.allOffersList;
+                $('.flipkart-offer-count').html(response.length);
+              }else if(datam.action == 'keyword'){
+                console.log(data.data);
+                console.log("search response");
+                return false;
+              }
+              sessionStorage.setItem("searchObject", JSON.stringify(response));
               for (var i = 0; i< response.length; i++) {
-                  html += '<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100 product-img"><a target="_blank" href='+response[i].url+'><img class="card-img-top" src='+response[i].imageUrls[3].url+' alt=""></a>';
+                  html += '<div class="col-lg-4 col-md-6 mb-4 product-holder"><div class="card h-100 product-img"><a target="_blank" href='+response[i].url+'><img class="card-img-top" src='+response[i].imageUrls[3].url+' alt=""></a>';
                   html += '<div class="card-body"><h4 class="card-title"><a target="_blank" href='+response[i].url+'>'+response[i].name+'</a></h4>';
-                  html +=  '<h5>'+response[i].title+'</h5><p class="card-text">'+(response[i].description=='null' ? '' : response[i].description )+'</p></div></div></div>'
-                }
-                console.log(html);
-                $('.produc-list-container').html(html);
+                  html +=  '<h5>'+response[i].title+'</h5><p class="card-text">'+(response[i].description=='null' ? '' : response[i].description )+'</p></div></div></div>';
+              }
+              $('.produc-list-container').html(html);
             } else {
-              alert("SOmething has went wrong / store not implemented");
+              $('.produc-list-container').html("Something has went wrong or store not implemented");
             }
           },
           error : function() {
@@ -149,6 +483,55 @@
           }
         });
       }
+      function getProducts(datam){
+        var store = datam.store;
+        var action = datam.action;
+        var flag = datam.flag;
+        console.log(datam);
+        $('.title').html(datam.title);
+        switch (flag){
+          case 'deals' :
+          case 'offers':
+                $('.fk-title-container').show();
+                $('.fk-search-container').hide();
+                $('.search-set-container').show();
+                $('.search-container').css('display','none');
+                $('.cart-loader').css('display','block');
+                $('.produc-list-container').hide();
+                searchAPI(datam);
+                break;
+          case 'category':
+                //$('.search-set-container').hide();
+                $('.fk-title-container').hide();
+                $('.fk-search-container').show();
+                $('.produc-list-container').html("Select category and products to be searched");
+
+                $("#fkCategory").change(function() {
+                  var searchUrl = $('#fkCategory').val();
+                  var searchCategory = $('#fkCategory :selected').attr('data-category');
+                  $('.search-input').val("");
+                  if(searchUrl!=""){
+                    var datam={}
+                    datam.url = searchUrl;
+                    datam.category = searchCategory;
+                    categorySearch(datam);
+                  }else{
+                    swal("Select a gategory to search", "", "warning");
+                  }
+                });
+
+                break;
+
+          case 'keyword':
+                $('.fk-title-container').show();
+                $('.search-set-container').show();
+                $('.fk-search-container').hide();
+                $('.produc-list-container').html("Enter product name to be searched");
+                break
+        }
+
+      }
+
     });
     </script>
   </body>

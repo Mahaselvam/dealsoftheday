@@ -27,68 +27,161 @@
   </style>
 </head>
 <body>
-<nav class="navbar navbar-default justify-content-between">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#"><img src="/images/logo2.jpeg" alt="logo" style="width:45px;height:45px;float:left;margin-right:10px;">
-        <!--<span>Deals of the day</span>-->
-      </a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active" data-store="all"><a>All</a></li>
-      <li data-store="flipkart"><a>Flipkart</a></li>
-      <li data-store="amazon"><a>Amazon</a></li>
-      <li data-store="snapdeal"><a>Snapdeal</a></li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0" style="padding-top:8px">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
+  <!------ Include the above in your HEAD tag ---------->
+
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3 col-md-3">
+              <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
+                              </span>Content</a>
+                          </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                              <table class="table">
+                                  <tr>
+                                      <td>
+                                          <span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <span class="glyphicon glyphicon-flash text-success"></span><a href="http://www.jquery2dotnet.com">News</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <span class="glyphicon glyphicon-file text-info"></span><a href="http://www.jquery2dotnet.com">Newsletters</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <span class="glyphicon glyphicon-comment text-success"></span><a href="http://www.jquery2dotnet.com">Comments</a>
+                                          <span class="badge">42</span>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
+                              </span>Modules</a>
+                          </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                          <div class="panel-body">
+                              <table class="table">
+                                  <tr>
+                                      <td>
+                                          <a href="http://www.jquery2dotnet.com">Orders</a> <span class="label label-success">$ 320</span>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <a href="http://www.jquery2dotnet.com">Invoices</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <a href="http://www.jquery2dotnet.com">Shipments</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <a href="http://www.jquery2dotnet.com">Tex</a>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user">
+                              </span>Account</a>
+                          </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                          <div class="panel-body">
+                              <table class="table">
+                                  <tr>
+                                      <td>
+                                          <a href="http://www.jquery2dotnet.com">Change Password</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <a href="http://www.jquery2dotnet.com">Notifications</a> <span class="label label-info">5</span>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <a href="http://www.jquery2dotnet.com">Import/Export</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <span class="glyphicon glyphicon-trash text-danger"></span><a href="http://www.jquery2dotnet.com" class="text-danger">
+                                              Delete Account</a>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
+                              </span>Reports</a>
+                          </h4>
+                      </div>
+                      <div id="collapseFour" class="panel-collapse collapse">
+                          <div class="panel-body">
+                              <table class="table">
+                                  <tr>
+                                      <td>
+                                          <span class="glyphicon glyphicon-usd"></span><a href="http://www.jquery2dotnet.com">Sales</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <span class="glyphicon glyphicon-user"></span><a href="http://www.jquery2dotnet.com">Customers</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <span class="glyphicon glyphicon-tasks"></span><a href="http://www.jquery2dotnet.com">Products</a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <span class="glyphicon glyphicon-shopping-cart"></span><a href="http://www.jquery2dotnet.com">Shopping Cart</a>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-9 col-md-9">
+              <div class="well">
+                  <h1>
+                      Accordion Menu With Icon</h1>
+                  Admin Dashboard Accordion Menu
+              </div>
+          </div>
+      </div>
   </div>
-</nav>
-<section>
-  <div class="container col-md-12 container data-holder">
-  </div>
-</section>
 </body>
-<script>
-$( document ).ready(function() {
-    $('.navbar .nav li').click(function(){
-      console.log("clicked");
-        $('ul.nav li').removeClass('active');
-        $(this).addClass('active');
-        var data = {};
-			  data.store = $(this).attr('data-store');;
-
-			$.ajax({
-				url : "/store/search",
-				type : "POST",
-				data : data,
-				success : function(data) {
-					console.log(data);
-					if (data.flag) {
-						var response = data.data.dotdList;
-            console.log(response.length);
-            var html;
-            for (var i = 0; i< response.length; i++) {
-              console.log(response[i].imageUrls);
-              //html += '<div class="col-md-3 col-sm-2 col-xs-1 product-container"><div class="product-img"><img src=' + response[i].imageUrls[3].url + '></div><div>'+response[i].name+'</div></div>';
-
-                html += '<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100 product-img"><a href='+response[i].url+'><img class="card-img-top" src='+response[i].imageUrls[3].url+' alt=""></a>';
-                html += '<div class="card-body"><h4 class="card-title"><a href='+response[i].url+'>'+response[i].name+'</a></h4>';
-                html +=  '<h5>'+response[i].title+'</h5><p class="card-text">'+response[i].description+'</p></div></div></div>'
-            $('.data-holder').html(html);
-              }
-					} else {
-						alert("SOmething has went wrong / store not implemented");
-					}
-				},
-				error : function() {
-					alert("Something went wrong");
-				}
-			});
-
-    });
-});
-</script>
 </html>

@@ -1,94 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-    .product-container {
-      box-shadow: 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px -2px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.12);
-      float: left;
-      margin: 0.5% 0.5% 0.5%;
-      position: relative;
-      height: 290px;
-      border: 1px solid #e9eaed;
-      background-color: #f9f9f9;
-    }
-    .nav li{
-      cursor:pointer;
-    }
-    .product-img img{
-      width:auto;
-      height:140px;
-    }
-  </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+<style>
+
+
+body {
+  color: #6a6c6f;
+  background-color: #f1f3f6;
+  margin-top:30px;
+}
+
+.container {
+  max-width: 960px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li {
+  border-bottom: 1px solid #eee;
+}
+
+.nav li a {
+  font-size: 14px;
+}
+
+#accordionMenu {
+  max-width: 300px;
+}
+
+.panel-body {
+  padding: 0;
+}
+
+.panel-group .panel+.panel {
+  margin-top: 0;
+  border-top: 0;
+}
+
+.panel-group .panel {
+  border-radius: 0;
+}
+
+.panel-default>.panel-heading {
+  color: #333;
+  background-color: #fff;
+  border-color: #e4e5e7;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.panel-default>.panel-heading a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.panel-default>.panel-heading a:after {
+  content: "";
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  float: right;
+  transition: transform .25s linear;
+  -webkit-transition: -webkit-transform .25s linear;
+}
+
+.panel-default>.panel-heading a[aria-expanded="true"] {
+  background-color: #eee;
+}
+
+.panel-default>.panel-heading a[aria-expanded="true"]:after {
+  content: "\e113";
+}
+
+.panel-default>.panel-heading a[aria-expanded="false"]:after {
+  content: "\e114";
+}
+
+
+</style>
 </head>
 <body>
-<nav class="navbar navbar-default justify-content-between">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#"><img src="/images/logo2.jpeg" alt="logo" style="width:45px;height:45px;float:left;margin-right:10px;">
-        <!--<span>Deals of the day</span>-->
-      </a>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand site-title" href="#">Deals of the day</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/service">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active" data-store="all"><a>All</a></li>
-      <li data-store="flipkart"><a>Flipkart</a></li>
-      <li data-store="amazon"><a>Amazon</a></li>
-      <li data-store="snapdeal"><a>Snapdeal</a></li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0" style="padding-top:8px">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+  </nav>
+<h2>Accordion</h2>
+<div class="container">
+  <div class="panel-group" id="accordionMenu" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Menu 0
+        </a>
+      </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <ul class="nav">
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Menu 1
+        </a>
+      </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+          <ul class="nav">
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Menu 2
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+          <ul class="nav">
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Menu 3
+        </a>
+      </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+        <div class="panel-body">
+          <ul class="nav">
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
-</nav>
-<section>
-  <div class="container col-md-12 container data-holder">
-  </div>
-</section>
+</div>
+
 </body>
-<script>
-$( document ).ready(function() {
-    $('.navbar .nav li').click(function(){
-      console.log("clicked");
-        $('ul.nav li').removeClass('active');
-        $(this).addClass('active');
-        var data = {};
-			  data.store = $(this).attr('data-store');;
-
-			$.ajax({
-				url : "/store/search",
-				type : "POST",
-				data : data,
-				success : function(data) {
-					console.log(data);
-					if (data.flag) {
-						var response = data.data.dotdList;
-            console.log(response.length);
-            var html;
-            for (var i = 0; i< response.length; i++) {
-              console.log(response[i].imageUrls);
-              //html += '<div class="col-md-3 col-sm-2 col-xs-1 product-container"><div class="product-img"><img src=' + response[i].imageUrls[3].url + '></div><div>'+response[i].name+'</div></div>';
-
-                html += '<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100 product-img"><a href='+response[i].url+'><img class="card-img-top" src='+response[i].imageUrls[3].url+' alt=""></a>';
-                html += '<div class="card-body"><h4 class="card-title"><a href='+response[i].url+'>'+response[i].name+'</a></h4>';
-                html +=  '<h5>'+response[i].title+'</h5><p class="card-text">'+response[i].description+'</p></div></div></div>'
-            $('.data-holder').html(html);
-              }
-					} else {
-						alert("SOmething has went wrong / store not implemented");
-					}
-				},
-				error : function() {
-					alert("Something went wrong");
-				}
-			});
-
-    });
-});
-</script>
 </html>

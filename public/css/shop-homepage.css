@@ -7,9 +7,187 @@
 body {
   padding-top: 54px;
 }
+.col-pad-0 {
+  padding: 0px !important;
+}
+.site-title {
+  position: relative;
+  top: 10px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none !important;
+}
+nav {
+  border-radius: 0px !important;
+}
+.nav li {
+  border-bottom: 1px solid #eee;
+}
 
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
+.nav li a {
+  font-size: 14px;
+}
+
+#accordionMenu {
+  max-width: 250px;
+}
+
+.panel-body {
+  padding: 0;
+}
+
+.panel-group .panel+.panel {
+  margin-top: 0;
+  border-top: 0;
+}
+
+.panel-group .panel {
+  border-radius: 0;
+}
+
+.panel-default>.panel-heading {
+  color: #333;
+  background-color: #fff;
+  border-color: #e4e5e7;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.panel-default>.panel-heading a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.panel-default>.panel-heading a:after {
+  content: "";
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  float: right;
+  transition: transform .25s linear;
+  -webkit-transition: -webkit-transform .25s linear;
+}
+
+.panel-default>.panel-heading a[aria-expanded="true"] {
+  background-color: #eee;
+}
+
+.panel-default>.panel-heading a[aria-expanded="true"]:after {
+  content: "\e113";
+}
+
+.panel-default>.panel-heading a[aria-expanded="false"]:after {
+  content: "\e114";
+}
+.table>tbody>tr.active>td, .table>tbody>tr.active>th, .table>tbody>tr>td.active, .table>tbody>tr>th.active, .table>tfoot>tr.active>td, .table>tfoot>tr.active>th, .table>tfoot>tr>td.active, .table>tfoot>tr>th.active, .table>thead>tr.active>td, .table>thead>tr.active>th, .table>thead>tr>td.active, .table>thead>tr>th.active{
+  background: #7fffd4 !important;
+}
+.store-menu{
+  cursor:pointer;
+}
+div.search-set input[type=text] {
+    padding: 10px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+div.search-set button {
+    float: left;
+    width: 20%;
+    padding: 8px;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+div.search-set button:hover {
+    background: #0b7dda;
+}
+.menu i {
+  margin-right: 5px;
+}
+.menu table {
+  margin-bottom:0px !important;
+}
+div.search-set::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.title-container{
+    margin: 60px 0px 0px;
+    padding: 10px;
+}
+
+.title {
+  color: white;
+  margin: 10px 0px;
+}
+/*
+Flipkart search box style
+*/
+
+.blueBox {
+    background-color: #4985ce;
+    padding: 10px 30px;
+    margin-top: 10px;
+}
+
+.btn-default {
+    color: #333333;
+    background-color: #fedc48;
+    border: solid thin #e4c640;
+    border-radius: 0px !important;
+}
+.card-img-top-search {
+  margin:0px auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+.card{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px;
+  border-radius: 5px;
+  transition: box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+  overflow: hidden;
+}
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 30px;
+  transform: scale(1.02);
+  z-index: 999;
+}
+.card-body{
+  text-align: center;
+}
+.product-title{
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  text-align: center;
+}
+
+#fkCategory{
+  margin: 0 auto;
+  height: 43px;
+  font-size: 13px;
 }
