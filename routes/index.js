@@ -14,6 +14,16 @@ var fkc = aff.createClient({
   responseType: 'json'
 });
 
+var util = require('util'),
+    OperationHelper = require('apac').OperationHelper;
+
+var opHelper = new OperationHelper({
+    awsId:     config.amazon.access_key_id,
+    awsSecret: config.amazon.secret_access_key,
+    assocId:   config.amazon.accociate_tag
+    // xml2jsOptions: an extra, optional, parameter for if you want to pass additional options for the xml2js module. (see https://github.com/Leonidas-from-XIV/node-xml2js#options)
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	fkc.getCategoryFeed({
@@ -154,6 +164,33 @@ router.post('/fk/search/category', function(req, res, next) {
 			});
 		}
 	});
+});
+
+router.post('/amazon/search/category', function(req, res, next) {
+
+	opHelper.execute('ItemSearch', {
+	  'SearchIndex': 'Books',
+	  'Keywords': 'harry potter',
+	  'ResponseGroup': 'ItemAttributes,Offers'
+	}, function(error, results) {
+
+		if(error){
+			console.log(error);
+			console.log('Error:', error);
+			res.send({
+				flag : false,
+				data : error
+			});
+		}else{
+			console.log(results);
+			res.send({
+				flag : true,
+				response : JSON.parse(results)
+			});
+		}
+	});
+
+
 });
 
 module.exports = router;

@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "apac": "^3.0.2",
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
@@ -15,6 +16,7 @@
     "lodash": "^4.17.10",
     "morgan": "~1.7.0",
     "request": "*",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "util": "^0.11.0"
   }
 }

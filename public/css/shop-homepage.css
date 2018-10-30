@@ -186,7 +186,7 @@ Flipkart search box style
   text-align: center;
 }
 
-#fkCategory{
+#fliplart-category, #amazon-category{
   margin: 0 auto;
   height: 43px;
   font-size: 13px;

@@ -245,13 +245,56 @@
                 Flipkart - Deals of the day
               </h2>
             </div>
-            <div class="col-md-6 fk-search-container" style="display:none;">
-                <select id="fkCategory" name="" class="form-control">
+            <div class="col-md-6 category-search-container Flipkart-search-container" style="display:none;">
+                <select id="fliplart-category" name="" class="form-control CategorySelectDropdown">
                     <option value="">Category</option>
                     <% for(let i = 0; i < categoryList.length; i++) { %>
                       <option value=<%=categoryList[i].url%> data-category=<%=categoryList[i].category%>><%=categoryList[i].categoryName%></option>
                     <% } %>
                 </select>
+            </div>
+            <div class="col-md-6 category-search-container Amazon-search-container" style="display:none;">
+              <select id="amazon-category"  class="form-control CategorySelectDropdown">
+                <option data-category="alexa-skills">Alexa Skills</option>
+                <option selected="selected" data-category="all">All Categories</option>
+                <option data-category="amazon-devices">Amazon Devices</option>
+                <option data-category="fashion">Amazon Fashion</option>
+                <option data-category="amazon-global-store">Amazon Global Store</option>
+                <option data-category="pantry">Amazon Pantry</option>
+                <option data-category="appliances">Appliances</option>
+                <option data-category="mobile-apps">Apps &amp; Games</option>
+                <option data-category="baby">Baby</option>
+                <option data-category="beauty">Beauty</option>
+                <option data-category="stripbooks">Books</option>
+                <option data-category="automotive">Car &amp; Motorbike</option>
+                <option data-category="apparel">Clothing &amp; Accessories</option>
+                <option data-category="collectibles">Collectibles</option>
+                <option data-category="computers">Computers &amp; Accessories</option>
+                <option data-category="electronics">Electronics</option>
+                <option data-category="furniture">Furniture</option>
+                <option data-category="lawngarden">Garden &amp; Outdoors</option>
+                <option data-category="gift-cards">Gift Cards</option>
+                <option data-category="grocery">Grocery &amp; Gourmet Foods</option>
+                <option data-category="hpc">Health &amp; Personal Care</option>
+                <option data-category="kitchen">Home &amp; Kitchen</option>
+                <option data-category="industrial">Industrial &amp; Scientific</option>
+                <option data-category="jewelry">Jewellery</option>
+                <option data-category="digital-text">Kindle Store</option>
+                <option data-category="luggage">Luggage &amp; Bags</option>
+                <option data-category="luxury-beauty">Luxury Beauty</option>
+                <option data-category="dvd">Movies &amp; TV Shows</option>
+                <option data-category="popular">Music</option>
+                <option data-category="mi">Musical Instruments</option>
+                <option data-category="office-products">Office Products</option>
+                <option data-category="pets">Pet Supplies</option>
+                <option data-category="shoes">Shoes &amp; Handbags</option>
+                <option data-category="software">Software</option>
+                <option data-category="sporting">Sports, Fitness &amp; Outdoors</option>
+                <option data-category="home-improvement">Tools &amp; Home Improvement</option>
+                <option data-category="toys">Toys &amp; Games</option>
+                <option data-category="videogames">Video Games</option>
+                <option data-category="watches">Watches</option>
+              </select>
             </div>
             <div class="col-md-6 pull-right search-set-container">
               <div class="search-set" style="margin:auto;max-width:300px">
@@ -320,13 +363,22 @@
           var input = $('.search-input').val();
           if(input == ''){
             if(data.flag=='category'){
-              var searchUrl = $('#fkCategory').val();
-              var searchCategory = $('#fkCategory :selected').attr('data-category');
+              var storeLower = (data.store).toLowerCase()
+              var searchUrl = $('#'+storeLower+'-category').val();
+              var searchCategory = $('#'+storeLower+'-category :selected').attr('data-category');
+              var datam={}
+              datam.category = searchCategory;
               if(searchUrl!=""){
-                var datam={}
-                datam.url = searchUrl;
-                datam.category = searchCategory;
-                categorySearch(datam);
+                switch (storeLower){
+                  case 'flipkart' :
+                      datam.url = searchUrl;
+                      fkcategorySearch(datam);
+                      break;
+                  case 'amazon':
+                      console.log("function implementation coming soooon");
+                      break;
+                }
+
               }else{
                 swal("Select a gategory to search", "", "warning");
               }
@@ -350,10 +402,10 @@
           swal("Enter product name to serach", "", "warning");
         }else{
           var html='';
-          var searchObject = JSON.parse(sessionStorage.searchObject);
           var regex = new RegExp(input, "i");
           var searchResult = 0;
           if(data.flag =='deals' || data.flag =='offers'){
+            var searchObject = JSON.parse(sessionStorage.searchObject);
             searchResult = 0;
     			  $.each(searchObject, function(key, val){
               var nameSearch = ((val.name==null || val.name=='null' || val.name==undefined || val.name=='undefined')) ? false : (val.name.search(regex) != -1);
@@ -367,26 +419,34 @@
                 }
     			  });
           }else if(data.flag=='category'){
-            searchResult = 0;
-    			  $.each(searchObject, function(key, val){
-              var brandSearch = ((val.productBrand==null || val.productBrand=='null' || val.productBrand==undefined || val.productBrand=='undefined')) ? false : (val.productBrand.search(regex) != -1);
-              var titleSearch = ((val.title==null || val.title=='null' || val.title==undefined || val.title=='undefined')) ? false : (val.title.search(regex) != -1);
-              var descSearch = ((val.productDescription==null || val.productDescription=='null' || val.productDescription==undefined || val.productDescription=='undefined')) ? false : (val.productDescription.search(regex) != -1);
-    				  if ((brandSearch) || (titleSearch) || (descSearch)) {
 
-                var images = JSON.stringify(val.imageUrls);
-                var images = JSON.parse(images);
-                html += '<div class="col-lg-4 col-md-6 mb-4 product-holder"><div class="card h-100 product-img"><a target="_blank" href='+val.productUrl+'><img class="card-img-top-search" src="'+images['400x400']+'" alt=""></a>';
-                html += '<div class="card-body"><h4 class="card-title"><a class="product-title" target="_blank" href='+val.productUrl+' title="'+val.title+'">'+val.title+'</a></h4>';
-                if(val.flipkartSellingPrice =='null' || val.flipkartSellingPrice==null ){
-                  html +=  '<div style="float:left;margin-right:10px">'+val.maximumRetailPrice.currency+' '+val.maximumRetailPrice.amount+'</div></div></div></div>';
-                }else{
-                  html +=  '<div style="float:left;margin-right:10px;color:green;font-weight:bold;">'+val.flipkartSellingPrice.currency+' '+val.flipkartSellingPrice.amount+'</div>';
-                  html +=  '<div style="text-decoration:line-through;color:red;">'+val.maximumRetailPrice.currency+' '+val.maximumRetailPrice.amount+'</div></div></div></div>';
+            if(data.store=='Flipkart'){
+              var searchObject = JSON.parse(sessionStorage.searchObject);
+              searchResult = 0;
+      			  $.each(searchObject, function(key, val){
+                var brandSearch = ((val.productBrand==null || val.productBrand=='null' || val.productBrand==undefined || val.productBrand=='undefined')) ? false : (val.productBrand.search(regex) != -1);
+                var titleSearch = ((val.title==null || val.title=='null' || val.title==undefined || val.title=='undefined')) ? false : (val.title.search(regex) != -1);
+                var descSearch = ((val.productDescription==null || val.productDescription=='null' || val.productDescription==undefined || val.productDescription=='undefined')) ? false : (val.productDescription.search(regex) != -1);
+      				  if ((brandSearch) || (titleSearch) || (descSearch)) {
+
+                  var images = JSON.stringify(val.imageUrls);
+                  var images = JSON.parse(images);
+                  html += '<div class="col-lg-4 col-md-6 mb-4 product-holder"><div class="card h-100 product-img"><a target="_blank" href='+val.productUrl+'><img class="card-img-top-search" src="'+images['400x400']+'" alt=""></a>';
+                  html += '<div class="card-body"><h4 class="card-title"><a class="product-title" target="_blank" href='+val.productUrl+' title="'+val.title+'">'+val.title+'</a></h4>';
+                  if(val.flipkartSellingPrice =='null' || val.flipkartSellingPrice==null ){
+                    html +=  '<div style="float:left;margin-right:10px">'+val.maximumRetailPrice.currency+' '+val.maximumRetailPrice.amount+'</div></div></div></div>';
+                  }else{
+                    html +=  '<div style="float:left;margin-right:10px;color:green;font-weight:bold;">'+val.flipkartSellingPrice.currency+' '+val.flipkartSellingPrice.amount+'</div>';
+                    html +=  '<div style="text-decoration:line-through;color:red;">'+val.maximumRetailPrice.currency+' '+val.maximumRetailPrice.amount+'</div></div></div></div>';
+                  }
+                  searchResult++;
                 }
-                searchResult++;
-              }
-    			  });
+      			  });
+            }
+
+            if(data.store=='Amazon'){
+              console.log("Search differs from others");
+            }
 
           }else{
             data.keyword = input;
@@ -403,7 +463,8 @@
         }
       });
 
-      function categorySearch(dataObject){
+      function fkcategorySearch(dataObject){
+        console.log(dataObject);
             $.ajax({
               url : "/fk/search/category",
               type : "POST",
@@ -443,6 +504,49 @@
               }
             });
       }
+
+      function amazoncategorySearch(dataObject){
+        console.log(dataObject);
+            $.ajax({
+              url : "/amazon/search/category",
+              type : "POST",
+              data : dataObject,
+              success : function(data) {
+
+                if (data.flag) {
+                    var response = data.response.products;
+                    var categoryObject = [];
+                    var html='';
+                    for(var i=0;i<response.length;i++){
+                      if(response[i].productBaseInfoV1.inStock){
+                        categoryObject.push(response[i].productBaseInfoV1);
+                        var images = JSON.stringify(response[i].productBaseInfoV1.imageUrls);
+                        var images = JSON.parse(images);
+                        html += '<div class="col-lg-4 col-md-6 mb-4 product-holder"><div class="card h-100 product-img"><a target="_blank" href='+response[i].productBaseInfoV1.productUrl+'><img class="card-img-top-search" src="'+images['400x400']+'" alt=""></a>';
+                        html += '<div class="card-body"><h4 class="card-title"><a class="product-title" target="_blank" href='+response[i].productBaseInfoV1.productUrl+' title="'+response[i].productBaseInfoV1.title+'">'+response[i].productBaseInfoV1.title+'</a></h4>';
+                        if(response[i].productBaseInfoV1.flipkartSellingPrice =='null' || response[i].productBaseInfoV1.flipkartSellingPrice==null ){
+                          html +=  '<div style="float:left;margin-right:10px">'+response[i].productBaseInfoV1.maximumRetailPrice.currency+' '+response[i].productBaseInfoV1.maximumRetailPrice.amount+'</div></div></div></div>';
+
+                        }else{
+                          html +=  '<div style="float:left;margin-right:10px;color:green;font-weight:bold;">'+response[i].productBaseInfoV1.flipkartSellingPrice.currency+' '+response[i].productBaseInfoV1.flipkartSellingPrice.amount+'</div>';
+                          html +=  '<div style="text-decoration:line-through;color:red;">'+response[i].productBaseInfoV1.maximumRetailPrice.currency+' '+response[i].productBaseInfoV1.maximumRetailPrice.amount+'</div></div></div></div>';
+
+                        }
+                      }
+                    }
+                    sessionStorage.setItem("searchObject", JSON.stringify(categoryObject));
+                    $('.produc-list-container').html(html);
+                } else {
+                  $('.produc-list-container').html("Please refresh and try again");
+                  alert("Something has went wrong / store not implemented");
+                }
+              },
+              error : function() {
+                alert("Something went wrong");
+              }
+            });
+      }
+
       function searchAPI(datam){
         $.ajax({
           url : "/store/search",
@@ -493,7 +597,7 @@
           case 'deals' :
           case 'offers':
                 $('.fk-title-container').show();
-                $('.fk-search-container').hide();
+                $('.category-search-container').hide();
                 $('.search-set-container').show();
                 $('.search-container').css('display','none');
                 $('.cart-loader').css('display','block');
@@ -501,23 +605,36 @@
                 searchAPI(datam);
                 break;
           case 'category':
-                //$('.search-set-container').hide();
                 $('.fk-title-container').hide();
-                $('.fk-search-container').show();
+                $('.category-search-container').hide();
+                $('.'+store+'-search-container').show();
                 $('.produc-list-container').html("Select category and products to be searched");
 
-                $("#fkCategory").change(function() {
-                  var searchUrl = $('#fkCategory').val();
-                  var searchCategory = $('#fkCategory :selected').attr('data-category');
-                  $('.search-input').val("");
-                  if(searchUrl!=""){
-                    var datam={}
-                    datam.url = searchUrl;
-                    datam.category = searchCategory;
-                    categorySearch(datam);
-                  }else{
-                    swal("Select a gategory to search", "", "warning");
-                  }
+                console.log("hasjd");
+                $("#fliplart-category").change(function() {
+                  console.log("cacacc");
+                    var searchUrl = $(this).val();
+                    var searchCategory = $('#fliplart-category :selected').attr('data-category');
+                    $('.search-input').val("");
+                    if(searchUrl!=""){
+                      var datam={}
+                      datam.url = searchUrl;
+                      datam.category = searchCategory;
+                      fkcategorySearch(datam);
+                    }else{
+                      swal("Select a gategory to search", "", "warning");
+                    }
+                });
+
+                $("#amazon-category").change(function() {
+                  var searchCategory = $('#amazon-category :selected').attr('data-category');
+                    $('.search-input').val("");
+                      var datam={}
+                      datam.category = searchCategory;
+                      console.log(datam);
+                      console.log("Coming soooon");
+                      amazoncategorySearch(datam);
+
                 });
 
                 break;
@@ -525,7 +642,7 @@
           case 'keyword':
                 $('.fk-title-container').show();
                 $('.search-set-container').show();
-                $('.fk-search-container').hide();
+                $('.category-search-container').hide();
                 $('.produc-list-container').html("Enter product name to be searched");
                 break
         }

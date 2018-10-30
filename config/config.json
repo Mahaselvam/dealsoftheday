@@ -7,5 +7,13 @@
   "flipkart":{
     "id":"shanumamm",
     "token":"143079b9135a4a058140af8ebcbc7172"
+  },
+  "amazon":{
+    "access_key_id":"AKIAIWUZYREJHPMW65ZQ",
+    "secret_access_key":"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",
+    "accociate_tag":"myhealthcircl-21",
+    "service":"AWSECommerceService",
+    "operation":"ItemSearch",
+    "url":"webservices.amazon.in"
   }
 }
